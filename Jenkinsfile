@@ -1,7 +1,7 @@
 pipeline{
-    agent docker
+    agent
     {
-        stages{
+        docker{
         stage("Docker Image Build"){
             steps{
                 echo("This is docker")
