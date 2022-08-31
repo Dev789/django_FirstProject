@@ -3,7 +3,8 @@ pipeline{
     stages{
         stage("Docker Image Build"){
             steps{
-                docker build -tag django-pipeline .
+                echo("This is docker")
+                // docker build -tag django-pipeline .
             }
         }
     }
