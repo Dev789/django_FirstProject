@@ -1,0 +1,34 @@
+# ========== Docker Compose For Local Environment ==========
+version: '3'
+
+services:
+  web:
+    env_file: ./.env.staging
+    build: .
+    container_name: web
+    volumes:
+      - static_volume:/DockerTest/static
+      - media_volume:/DockerTest/media
+    expose:
+      - 8000
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    ports:
+     - "7000:80"
+    volumes:
+      - static_volume:/DockerTest/static
+      - media_volume:/DockerTest/media
+    depends_on:
+      - web
+
+#networks:
+#  jenkins_build:
+#    driver: 9.9.9.112
+#    external: true
+
+
+volumes:
+  static_volume:
+  media_volume:

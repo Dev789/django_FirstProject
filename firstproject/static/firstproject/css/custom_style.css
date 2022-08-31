@@ -1,0 +1,79 @@
+.required_fields {
+    color: red;
+}
+
+.errorlist {
+    color: red;
+}
+
+.brand-logo {
+    background: #fff;
+}
+
+.text-black {
+    color: black;
+}
+
+.icon-btn-size {
+    width: 27px;
+    height: 31px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pl-5 {
+    padding-left: 5px !important;
+}
+
+.chat-detail{
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+.chat-box{
+    flex: 1 1 auto;
+    height: auto;
+    overflow-y: auto;
+}
+.chat-box .chat-desc{
+    height: 100%;
+}
+.select2{width: 100% !important;}
+.form-group>label {    width: 100%;
+}
+.select2-container--default .select2-selection--multiple{padding-bottom: 5px}
+.chat-profile-header{
+    padding: 0;
+}
+.chat-profile-header .left{
+    width: 100%;
+    max-height: 120px;
+    overflow-y: auto;
+
+}
+.chat-header-inner{
+padding: 10px 30px 10px 20px;
+}
+.chat-profile-header .chat-profile-name{
+    width: 100%;
+}
+.chat-profile-inner{
+    display: flex;
+}
+.chat-profile-inner .profile-header-title{
+    padding-right: 15px;
+    font-weight: 600;
+}
+.chat-profile-inner .description{
+    flex: 1;
+}
+.chat-box .chat-desc ul li .chat-body p{
+    word-break: break-word;
+    white-space: pre-wrap;
+}
+.copy_data{
+    width: 100%;
+    word-break: break-word;
+}

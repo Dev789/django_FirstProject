@@ -1,0 +1,128 @@
+{% load static %}
+{% load general_tags %}
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Django Docker</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'firstproject/images/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'firstproject/images/favicon.ico' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'firstproject/images/favicon.ico' %}">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'firstproject/css/core.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'firstproject/css/icon-font.min.css' %}">
+    {% block css-head %} {% endblock css-head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'firstproject/css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'firstproject/css/custom_style.css' %}">
+    <link href="{% static 'firstproject/css/dataTables.bootstrap4.min.css' %}" rel="stylesheet" type="text/css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119386393-1');
+
+
+
+
+    </script>
+</head>
+<body>
+<div class="pre-loader">
+    <div class="pre-loader-box">
+        <div class="loader-logo">
+            <img src="{% static 'firstproject/images/logo.svg' %}" alt="">
+        </div>
+        <div class='loader-progress' id="progress_div">
+            <div class='bar' id='bar1'></div>
+        </div>
+        <div class='percent' id='percent1'>0%</div>
+        <div class="loading-text">
+            Loading...
+        </div>
+    </div>
+</div>
+
+<div class="header">
+    <div class="header-left">
+        <div class="menu-icon dw dw-menu"></div>
+        <div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+
+    </div>
+    <div class="header-right">
+
+        <div class="user-info-dropdown">
+            <div class="dropdown">
+                <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                    <span class="user-icon" style="width: 0;"></span>
+                    <span class="user-name">Admin</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="left-side-bar">
+    <div class="brand-logo">
+        <a href="{% url 'demo' %}">
+            <img src="{% static 'firstproject/images/logo.svg' %}" alt="" class="dark-logo">
+            <img src="{% static 'firstproject/images/logo.svg' %}" alt="" class="light-logo">
+        </a>
+        <div class="close-sidebar" data-toggle="left-sidebar-close">
+            <i class="ion-close-round"></i>
+        </div>
+    </div>
+    <div class="menu-block customscroll">
+        {% set_value request.resolver_match.url_name as current_url %}
+
+        <div class="sidebar-menu">
+            <ul id="accordion-menu">
+                <li>
+                    <a class="dropdown-toggle no-arrow {% get_menu_selected_class current_url 1 %}"
+                       href="{% url 'demo' %}">
+                        <span class="micon fa fa-home"></span><span class="mtext">Dashboard</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="mobile-menu-overlay"></div>
+
+<div class="main-container">
+    {% block content %} {% endblock content %}
+</div>
+<!-- js -->
+<script src="{% static 'firstproject/js/core.js' %}"></script>
+<script src="{% static 'firstproject/js/script.min.js' %}"></script>
+<script src="{% static 'firstproject/js/process.js' %}"></script>
+<script src="{% static 'firstproject/js/sweetalert2.all.min.js' %}"></script>
+<script src="{% static 'firstproject/js/notifications.js' %}"></script>
+
+
+{% block js-foot %}
+{% endblock js-foot %}
+
+{% block javascript %}
+{% endblock javascript %}
+<script src="{% static 'firstproject/js/custom.js' %}"></script>
+
+</body>
+</html>

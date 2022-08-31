@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Unexpected Error</title>
+
+    <!-- Site favicon -->
+    <link href="{% static 'lawyer/images/favicon.ico' %}" rel="apple-touch-icon" sizes="180x180">
+    <link href="{% static 'lawyer/images/favicon.ico' %}" rel="icon" sizes="32x32" type="image/png">
+    <link href="{% static 'lawyer/images/favicon.ico' %}" rel="icon" sizes="16x16" type="image/png">
+
+    <!-- Mobile Specific Metas -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- CSS -->
+    <link href="{% static 'lawyer/css/core.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'lawyer/css/icon-font.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'lawyer/css/style.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'lawyer/css/custom.css' %}" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<div class="error-page d-flex align-items-center flex-wrap justify-content-center pd-20">
+    <div class="pd-10">
+        <div class="error-page-wrap text-center">
+            <h1>500</h1>
+            <h3>Error: 500 Unexpected Error</h3>
+            <p>An error ocurred and your request couldn’t be completed..<br>Either check the URL</p>
+        </div>
+    </div>
+</div>
+
+<!-- js -->
+<script src="{% static 'lawyer/js/core.min.js' %}"></script>
+<script src="{% static 'lawyer/js/script.min.js' %}"></script>
+<script src="{% static 'lawyer/js/process.js' %}"></script>
+</body>
+</html>
