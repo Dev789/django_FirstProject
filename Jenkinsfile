@@ -1,6 +1,5 @@
 pipeline{
     agent docker-agent
-    {
         stages{
         stage("Docker Image Build"){
             steps{
@@ -8,6 +7,5 @@ pipeline{
                 sh 'docker build -tag django-pipeline .'
             }
         }
-    }
     }
 }
