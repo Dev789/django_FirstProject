@@ -9,7 +9,9 @@ pipeline{
 
         stage("building Image"){
             steps{
-                sh 'docker build --tag django .'
+                script{
+                    docker.build
+                }
             }
         }
     }
