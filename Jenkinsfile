@@ -1,10 +1,15 @@
 pipeline{
-    agent docker-agent
-        stages{
-        stage("Docker Image Build"){
+    agent any
+    stages{
+        stage("Cloning Git"){
             steps{
-                echo("This is docker")
-                sh 'docker build -tag django-pipeline .'
+                git(url: 'https://github.com/Dev789/django_FirstProject.git', branch: 'master', credentialsId: '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')
+            }
+        }
+
+        stage("building Image"){
+            steps{
+                sh 'docker build --tag django .'
             }
         }
     }
