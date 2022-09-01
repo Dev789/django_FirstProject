@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent docker
     stages{
         stage("Cloning Git"){
             steps{
@@ -10,7 +10,7 @@ pipeline{
         stage("building Image"){
             steps{
                 script{
-                    docker.build
+                    sh 'docker build -t test .'
                 }
             }
         }
